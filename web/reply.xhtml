@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Reply Page</title>
+        <style>
+            body{
+                background-image: url("bg1.jpg");
+                background-size: cover;
+                background-color: lightgray;
+                text-align: center;
+            }
+        </style>
+    </h:head>
+    <body>
+         <h:form>
+             <h3 style="color: blueviolet">Reply to #{login.theLoginAccount.readSelectedEmail().title}</h3>
+            <p>Content: </p>
+            <p>
+                <h:inputTextarea style="width: 500px; height: 200px" required="true" requiredMessage="Content cannot be empty" value="#{login.theLoginAccount.reContent}" title="Enter the content here"/>
+            </p>
+            <p>
+                <h:commandButton value="Send" action="replySuccessful.xhtml"/>
+            </p>
+         
+        </h:form>
+        <h:form>
+               <p>
+                <h:commandButton value="Back" action="inbox.xhtml"/>
+            </p>
+        </h:form>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>Welcome Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            body{
+                background-image: url("bg1.jpg");
+                background-size: cover;
+                background-color: lightgray;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h:form>
+            <div style="color: blueviolet">Welcome, #{login.theLoginAccount.name}</div>
+            <br/>
+        <h3>
+            Please chose these options below:
+        </h3>
+            <p>   <h:link outcome="inbox.xhtml">
+                Inbox Email
+            </h:link></p>
+            
+            <p>   <h:link outcome="compose.xhtml">
+                Compose a Email
+            </h:link></p>
+            
+            <p>   <h:link outcome="sentFolder.xhtml">
+                Sent Folder
+            </h:link></p>
+            
+            <p>   <h:link outcome="trash.xhtml">
+                Trash Bin
+            </h:link></p>
+            
+            <p>   <h:commandLink value="Sign out" action="#{login.theLoginAccount.signOut()}">
+            </h:commandLink></p>
+        </h:form>
+    </body>
+    <a href="welcome.xhtml"></a>
+</html>

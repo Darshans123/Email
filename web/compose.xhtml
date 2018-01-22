@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Compose a Email</title>
+        <style>
+            body{
+                background-image: url("bg1.jpg");
+                background-size: cover;
+                background-color: lightgray;
+                text-align: center;
+            }
+        </style>
+    </h:head>
+    <body>
+        <h:form>
+            <h3 style="color: blueviolet">Write a new Email</h3>
+            <p>
+                Receiver:
+            </p>
+            <p><h:inputText required="true" requiredMessage="Receiver cannot be empty" value="#{login.theLoginAccount.receiver}"
+                            title="Enter receiver ID" validatorMessage="The email length must be between 3 and 10">
+                <f:validateLength maximum="10" minimum="3" />
+                </h:inputText>
+            </p>
+            <p>Title: </p>
+            <p>
+                <h:inputText required="true" requiredMessage="Title cannot be empty" value="#{login.theLoginAccount.title}"
+                             title="Enter your title" />
+            </p>
+            <p>Content: </p>
+            <p>
+                <h:inputTextarea style="width: 500px; height: 200px" required="true" requiredMessage="Content cannot be empty" value="#{login.theLoginAccount.content}" title="Enter the content here"/>
+            </p>
+            <p>
+                <h:selectBooleanCheckbox value="#{login.theLoginAccount.noti}">Notification</h:selectBooleanCheckbox>
+            </p>
+            <p>
+                <h:commandButton value="Send" action="sentSuccessful.xhtml"/>
+            </p>
+         
+        </h:form>
+        <h:form>
+               <p>
+                <h:commandButton value="Back" action="welcome.xhtml"/>
+            </p>
+        </h:form>
+    </body>
+</html>

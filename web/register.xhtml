@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>Register Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+           <style>
+            body{
+                background-image: url("bg1.jpg");
+                background-size: cover;
+                background-color: lightgray;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h:form>
+            <h1 style="color: blueviolet">Create a new email account</h1>
+            <p>
+            Please enter your email id: <br/>
+            <h:inputText id="emailId" required="true" requiredMessage="Email ID cannot be empty"
+                         title="Email ID" value="#{register.emailId}"
+                         validatorMessage="The email ID length must be between 3 and 10">
+                <f:validateLength maximum="10" minimum="3" />
+            </h:inputText></p>
+            <p>
+            Please enter your name: <br/>
+            <h:inputText id="name" required="true" requiredMessage="Name cannot be empty" title="Your Name"
+                         value="#{register.name}">
+            </h:inputText></p>
+            <p>
+            Please enter your password: <br/>
+            <h:inputText id="pwd" required="true" requiredMessage="Password cannot be empty"
+                         value="#{register.pwd}" validatorMessage="The length must be from 3 to 20 characters">
+                <f:validateLength minimum="3" maximum="20"/>
+            </h:inputText>
+            </p>
+            <p>
+                <h:commandButton value="Register" id="submit"
+                                 action="registerSuccessful.xhtml">
+                    
+                </h:commandButton>
+            </p>
+        </h:form>
+    </body>
+</html>

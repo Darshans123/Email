@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>Login Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            body{
+                background-image: url("bg1.jpg");
+                background-size: cover;
+                background-color: lightgray;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="uhcl_logo.jpeg" alt=""/>
+        <h:form>
+            <p>
+                Please enter your email ID: <br/>
+                <h:inputText id="loginID" value="#{login.id}" required="true" requiredMessage="Email ID cannot be empty" validatorMessage="Email ID length must be between 3 and 10" title="Enter your email ID">
+                    <f:validateLength maximum="10" minimum="3" />
+                </h:inputText>
+            </p>
+            <p>
+                Please enter your password: <br/>
+                <h:inputSecret value="#{login.psw}" title="Enter your password" required="true" requiredMessage="Password must be entered" validatorMessage="Password length must be less than 20 characters">
+                    <f:validateLength maximum="20"/>
+                </h:inputSecret>
+            </p>
+            <p>
+                <h:commandButton id="submit" action="#{login.login()}" value="Login">
+                    
+                </h:commandButton>
+            </p>
+            
+        </h:form>
+    </body>
+</html>

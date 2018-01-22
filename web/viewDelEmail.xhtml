@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>View Email</title>
+        <style>
+            body{
+                background-image: url("bg1.jpg");
+                background-size: cover;
+                background-color: lightgray;
+                text-align: center;
+            }
+        </style>
+    </h:head>
+    <body>
+        <h:form>
+            <p style="color: blueviolet; text-align: left; margin-left: 27%">Title: </p>
+            <p style="text-align: left; margin-left: 30%">#{login.theLoginAccount.readDeletedEmail().title}</p>
+            <p style="color: blueviolet; text-align: left; margin-left: 27%">Content: </p>
+            <p style="text-align: left; margin-left: 30%">
+                <h:outputText value="#{login.theLoginAccount.readDeletedEmail().content}" escape="false"/>
+            </p>
+            <p style="float: right; margin-right: 30%">                
+                <h:commandButton value=" Back " id="submit" action="trash.xhtml" />
+            </p>
+        </h:form>
+    </body>
+</html>

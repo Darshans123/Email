@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Group4's Project</title>
+        <style>
+            image{
+                height: 400px;
+                width: 600px;
+            }
+            body{
+                background-image: url("bg_5.gif");
+                background-size: cover;
+                background-color: lightgray;
+                text-align: center;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1 style='color: blueviolet'>Welcome to Group4's Email Page</h1>
+            <img src="email.jpg" alt=""/>
+            <h3>Please choose the option you want: </h3>
+            <p>
+                <h:link outcome="register.xhtml">
+                    Register
+                </h:link>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <h:link outcome="login.xhtml">
+                    Login
+                </h:link>
+            </p>
+        </h:form>
+    </h:body>
+</html>
+
